@@ -27,6 +27,5 @@ export default {
 .default__content
   margin-top: 40px
   width: 1100px
-  display: flex
 </style>
 

@@ -45,7 +45,7 @@ export default {
   font-weight: 500
   font-size: 14px
   font-family: $default-font
-  border-radius: 4px
+  border-radius: 3px
   outline: none
   display: flex
   z-index: 1

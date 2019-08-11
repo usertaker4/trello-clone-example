@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import boards from './modules/boards/index'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  modules: {
+    boards
+  },
   state: {
     layout: 'default-layout'
   },
@@ -11,9 +15,6 @@ export default new Vuex.Store({
     setLayout (state, payload) {
       state.layout = payload
     }
-  },
-  actions: {
-
   },
   getters: {
     layout (state) {

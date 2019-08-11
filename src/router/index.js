@@ -16,7 +16,7 @@ export default new Router({
     {
       path: '/boards',
       name: 'boards',
-      component: () => import('../views/Boards.vue')
+      component: () => import('../views/BoardsPage.vue')
       // meta: {
       //   layout: 'default-layout'
       // }

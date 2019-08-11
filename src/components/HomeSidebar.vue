@@ -43,6 +43,7 @@ export default {
   flex-direction: column
   color: $color-dark
   width: 220px
+  position: fixed
 .sidebar__navigation
   list-style: none
   padding: 0
@@ -57,7 +58,7 @@ export default {
   &:last-child
     margin-bottom: 0
   span
-    margin-left: 4px
+    margin-left: 3px
   i
     font-size: 18px
   &:hover
