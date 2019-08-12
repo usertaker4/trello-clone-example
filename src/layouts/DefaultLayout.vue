@@ -1,39 +1,16 @@
 <template>
   <div class="default__wrap">
-    <new-board-modal v-if="boardCreation"/>
-    <div class="default__content">
-      <home-sidebar/>
-      <slot/>
-    </div>
+    <slot/>
   </div>
 </template>
-
 <script>
-import HomeSidebar from '../components/HomeSidebar.vue'
-import NewBoardModal from '../components/NewBoardModal.vue'
-
 export default {
-  name: 'DefaultLayout',
-  components: {
-    HomeSidebar,
-    NewBoardModal
-  },
-  computed: {
-    boardCreation () {
-      return this.$store.state.boards.boardCreation
-    }
-  }
+  name: 'DefaultLayout'
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .default__wrap
   width: 100%
   height: 100%
-  display: flex
-  justify-content: center
-.default__content
-  margin-top: 40px
-  width: 1100px
 </style>
-

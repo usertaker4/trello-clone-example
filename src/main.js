@@ -5,9 +5,11 @@ import store from './store/index'
 
 Vue.config.productionTip = false
 
-import DefaultLayout from './layouts/DefaultLayout.vue'
+import GeneralLayout from './layouts/GeneralLayout.vue'
+import DefaultlLayout from './layouts/DefaultLayout.vue'
 
-Vue.component('default-layout', DefaultLayout)
+Vue.component('default-layout', DefaultlLayout)
+Vue.component('general-layout', GeneralLayout)
 
 new Vue({
   router,

@@ -11,15 +11,24 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/Home.vue')
+      component: () => import('../views/Home.vue'),
+      meta: {
+        layout: 'general-layout'
+      }
     },
     {
       path: '/boards',
       name: 'boards',
-      component: () => import('../views/BoardsPage.vue')
-      // meta: {
-      //   layout: 'default-layout'
-      // }
+      component: () => import('../views/BoardsPage.vue'),
+      meta: {
+        layout: 'general-layout'
+      }
+    },
+    {
+      path: '/board/:id',
+      name: 'board',
+      props: true,
+      component: () => import('../views/BoardPage.vue')
     }
   ]
 })

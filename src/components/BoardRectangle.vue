@@ -1,6 +1,7 @@
 <template>
   <div class="items__rectangle" :style="{background: `${background}`}">
     <div class="rectangle__details">
+      <router-link tag="div" :to="{name: 'board', params:{id: id, board: board}}" class="rectangle__link"></router-link>
       <div class="rectangle__title">{{title}}</div>
       <span class="rectangle__favorite" @click="toggleFavorite">
         <div class="favorite__options">
@@ -53,6 +54,7 @@ export default {
   display: flex
   flex: 0 0 auto
   margin: 4px
+  z-index: 0
   position: relative
   padding: 8px
   border-radius: 3px
@@ -68,7 +70,7 @@ export default {
       border-radius: 3px
       top: 0
       left: 0
-      z-index: 0
+      z-index: 1
       background-color: rgba(0, 0, 0, 0.2)
     .favorite__icon
       right: 0
@@ -78,6 +80,13 @@ export default {
   width: 100%
   justify-content: space-between
   flex-direction: column
+.rectangle__link
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 2
 .rectangle__title
   display: -webkit-box
   -webkit-line-clamp: 2
@@ -91,6 +100,7 @@ export default {
 .favorite__options
   position: relative
   width: 24px
+  z-index: 99
   height: 24px
 .favorite__icon
   right: -35px

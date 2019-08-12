@@ -7,12 +7,12 @@
     >
       <i class="material-icons">home</i>
     </router-link>
-    <button class="header__button">
+    <router-link tag="button" to="/boards" class="header__button">
       <i class="material-icons">dashboard</i>
       <span>Boards</span>
-    </button>
+    </router-link>
     <h1 class="header__title">
-      Trello example
+      Drello
     </h1>
   </div>
 </template>
