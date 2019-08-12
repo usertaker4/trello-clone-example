@@ -1,5 +1,6 @@
 <template>
   <div class="default__wrap">
+    <new-board-modal v-if="boardCreation"/>
     <div class="default__content">
       <home-sidebar/>
       <slot/>
@@ -9,11 +10,18 @@
 
 <script>
 import HomeSidebar from '../components/HomeSidebar.vue'
+import NewBoardModal from '../components/NewBoardModal.vue'
 
 export default {
   name: 'DefaultLayout',
   components: {
-    HomeSidebar
+    HomeSidebar,
+    NewBoardModal
+  },
+  computed: {
+    boardCreation () {
+      return this.$store.state.boards.boardCreation
+    }
   }
 }
 </script>

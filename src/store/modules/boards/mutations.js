@@ -1,4 +1,4 @@
-import * as types from '../mutation-types'
+import * as types from '../../mutation-types'
 
 export default {
   [types.UPDATE_BOARD] (state, board) {
@@ -10,7 +10,23 @@ export default {
       title: board.title,
       editing: board.editing,
       favorite: board.favorite,
+      background: board.background,
       list: board.list
     })
+  },
+
+  [types.ADD_BOARD] (state, { title, background }) {
+    state.boards.push({
+      id: Date.now(),
+      title: title,
+      background: background,
+      favorite: false,
+      editing: false,
+      list: []
+    })
+  },
+
+  [types.BOARD_CREATION_TOGGLE] (state) {
+    state.boardCreation = !state.boardCreation
   }
 }

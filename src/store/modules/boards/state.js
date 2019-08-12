@@ -4,6 +4,7 @@ export default {
       id: Date.now(),
       title: 'Example board',
       favorite: false,
+      background: 'rgb(137, 96, 158)',
       editing: false,
       list: [
         {
@@ -18,5 +19,6 @@ export default {
         }
       ]
     }
-  ]
+  ],
+  boardCreation: false
 }

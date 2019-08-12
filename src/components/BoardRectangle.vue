@@ -1,5 +1,5 @@
 <template>
-  <div class="items__rectangle">
+  <div class="items__rectangle" :style="{background: `${background}`}">
     <div class="rectangle__details">
       <div class="rectangle__title">{{title}}</div>
       <span class="rectangle__favorite" @click="toggleFavorite">
@@ -26,7 +26,8 @@ export default {
       editing: this.board.editing,
       list: this.board.list,
       title: this.board.title,
-      favorite: this.board.favorite
+      favorite: this.board.favorite,
+      background: this.board.background
     }
   },
   methods: {
@@ -38,6 +39,7 @@ export default {
         title: this.title,
         editing: this.editing,
         favorite: this.favorite,
+        background: this.background,
         list: this.list
       })
     }
@@ -47,18 +49,27 @@ export default {
 
 <style lang="stylus">
 .items__rectangle
-  background-color: rgba(0, 40, 90, .5)
   color: rgb(255, 255, 255)
   display: flex
-  margin-bottom: 8px
+  flex: 0 0 auto
+  margin: 4px
+  position: relative
   padding: 8px
   border-radius: 3px
   width: calc(25% - 8px)
-  transition: .15s ease
   overflow: hidden
   &:hover
     cursor: pointer
-    background-color: rgba(0, 40, 90, .55)
+    &::before
+      position: absolute 
+      content: ''
+      width: 100%
+      height: 100%
+      border-radius: 3px
+      top: 0
+      left: 0
+      z-index: 0
+      background-color: rgba(0, 0, 0, 0.2)
     .favorite__icon
       right: 0
 .rectangle__details
@@ -72,6 +83,7 @@ export default {
   -webkit-line-clamp: 2
   -webkit-box-orient: vertical
   overflow: hidden
+  z-index: 1
 .rectangle__favorite
   display: flex
   align-self: flex-end

@@ -43,7 +43,9 @@
       </div>
       <div class="personal__items items">
         <board-rectangle :board="board" v-for="board in boards" :key="board.id"/>
+        <new-board-rectangle/>
       </div>
+      
     </div>
   </div>
 </template>
@@ -51,11 +53,13 @@
 <script>
 import { mapState } from 'vuex'
 import BoardRectangle from './BoardRectangle'
+import NewBoardRectangle from './NewBoardRectangle'
 
 export default {
   name: 'BoardsList',
   components: {
-    BoardRectangle
+    BoardRectangle,
+    NewBoardRectangle
   },
   computed: {
     ...mapState('boards', [
@@ -82,8 +86,7 @@ export default {
     margin-left: 10px
 .items
   display: flex
-  justify-content: space-between
   flex-wrap: wrap
-  width: 100%
-  margin-top: 8px
+  margin: -4px -4px
+  padding-top: 8px
 </style>
