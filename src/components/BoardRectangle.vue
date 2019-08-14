@@ -24,8 +24,7 @@ export default {
   data () {
     return {
       id: this.board.id,
-      editing: this.board.editing,
-      list: this.board.list,
+      lists: this.board.lists,
       title: this.board.title,
       favorite: this.board.favorite,
       background: this.board.background
@@ -38,10 +37,9 @@ export default {
       this.$store.dispatch('boards/updateBoard', {
         id: this.id,
         title: this.title,
-        editing: this.editing,
         favorite: this.favorite,
         background: this.background,
-        list: this.list
+        lists: this.lists
       })
     }
   }
@@ -54,6 +52,7 @@ export default {
   display: flex
   flex: 0 0 auto
   margin: 4px
+  cursor: pointer
   z-index: 0
   position: relative
   padding: 8px
@@ -61,7 +60,6 @@ export default {
   width: calc(25% - 8px)
   overflow: hidden
   &:hover
-    cursor: pointer
     &::before
       position: absolute 
       content: ''

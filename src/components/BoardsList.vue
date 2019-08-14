@@ -36,12 +36,12 @@
         </div>
       </div>
     </div> -->
-    <div class="personal__container container">
-      <div class="personal__title title">
+    <div class=" boards-list__container">
+      <div class=" boards-list__title">
         <i class="material-icons">person</i>
         <span>Personal boards</span>
       </div>
-      <div class="personal__items items">
+      <div class="boards-list__items">
         <board-rectangle :board="board" v-for="board in boards" :key="board.id"/>
         <new-board-rectangle/>
       </div>
@@ -76,15 +76,15 @@ export default {
   font-weight: 700
   display: flex
   flex-direction: column
-.container
+.boards-list__container
   display: flex
   flex-direction: column
-.title
+.boards-list__title
   display: flex
   align-items: center
   span
     margin-left: 10px
-.items
+.boards-list__items
   display: flex
   flex-wrap: wrap
   margin: -4px -4px

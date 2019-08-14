@@ -8,10 +8,9 @@ export default {
     boards.splice(index, 1, {
       id: board.id,
       title: board.title,
-      editing: board.editing,
       favorite: board.favorite,
       background: board.background,
-      list: board.list
+      lists: board.lists
     })
   },
 
@@ -21,8 +20,7 @@ export default {
       title: title,
       background: background,
       favorite: false,
-      editing: false,
-      list: []
+      lists: []
     })
   },
 

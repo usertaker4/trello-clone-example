@@ -2,17 +2,20 @@
   <div class="board-page__wrap">
     <div class="board-page__content" :style="{background: `${background}`}">
       <board-header :board="board"/>
+      <board-lists :lists="lists"/>
     </div>
     <div class="board-page__menu"></div>
   </div>
 </template>
 <script>
 import BoardHeader from '../components/BoardHeader.vue'
+import BoardLists from '../components/BoardLists.vue'
 
 export default {
   name: 'board',
   components: {
-    BoardHeader
+    BoardHeader,
+    BoardLists
   },
   props: {
     board: {
@@ -22,7 +25,8 @@ export default {
   },
   data () {
     return {
-      background: this.board.background
+      background: this.board.background,
+      lists: this.board.lists
     }
   }
 }

@@ -5,8 +5,7 @@ export default {
       title: 'Example board',
       favorite: false,
       background: 'rgb(137, 96, 158)',
-      editing: false,
-      list: [
+      lists: [
         {
           id: Date.now(),
           title: 'Example list',
