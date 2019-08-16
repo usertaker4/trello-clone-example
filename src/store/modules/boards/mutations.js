@@ -24,6 +24,21 @@ export default {
     })
   },
 
+  [types.ADD_BOARD_LIST] (state, { lists, title }) {
+    lists.push({
+      id: Date.now(),
+      title: title,
+      tasks: []
+    })
+  },
+
+  [types.ADD_BOARD_TASK] (state, { tasks, title }) {
+    tasks.push({
+      id: Date.now(),
+      title: title
+    })
+  },
+
   [types.BOARD_CREATION_TOGGLE] (state) {
     state.boardCreation = !state.boardCreation
   }

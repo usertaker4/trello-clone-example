@@ -21,6 +21,4 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.board-tasks__wrap
-  padding: 0 8px
 </style>

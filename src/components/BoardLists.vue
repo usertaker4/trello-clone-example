@@ -5,15 +5,18 @@
       :key="list.id"
       :list="list"
     />
+    <board-new-list :lists="lists"/>
   </div>
 </template>
 <script>
 import BoardList from './BoardList.vue'
+import BoardNewList from './BoardNewList.vue'
 
 export default {
   name: 'BoardLists',
   components: {
-    BoardList
+    BoardList,
+    BoardNewList
   },
   props: {
     lists: {
@@ -25,4 +28,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.board-lists__wrap
+  display: flex
 </style>
